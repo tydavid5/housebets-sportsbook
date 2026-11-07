@@ -19,6 +19,9 @@
   --red:#D64545;
   --red-soft:#FBEAEA;
   --blue:#2563EB;
+  --teal:#0EA5A0;
+  --teal-soft:#E0F5F3;
+  --susp:#8A6D1B;
   --radius:14px;
   --shadow:0 1px 3px rgba(27,30,35,.06),0 4px 14px rgba(27,30,35,.05);
 }
@@ -32,9 +35,9 @@ input{font-family:inherit}
 header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
 .header-in{max-width:1080px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:22px;letter-spacing:-.02em}
-.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--green);display:flex;align-items:center;justify-content:center;flex:none}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--teal);display:flex;align-items:center;justify-content:center;flex:none}
 .logo-mark svg{width:20px;height:20px}
-.logo span b{color:var(--green)}
+.logo span b{color:var(--teal)}
 .balance-chip{margin-left:auto;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 6px 6px 14px;box-shadow:var(--shadow)}
 .balance-chip .bal{font-weight:800;font-size:15px}
 .balance-chip .bal small{color:var(--muted);font-weight:600;font-size:11px;display:block;line-height:1.1}
@@ -63,11 +66,11 @@ h1{font-size:26px;letter-spacing:-.02em;margin:20px 0 4px}
 h2{font-size:18px;letter-spacing:-.01em;margin:26px 0 10px}
 .sub{color:var(--muted);font-size:14px;margin-bottom:6px}
 .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.section-head .link{font-size:13px;font-weight:700;color:var(--green);white-space:nowrap}
+.section-head .link{font-size:13px;font-weight:700;color:var(--teal);white-space:nowrap}
 /* hero */
-.hero{background:var(--ink);color:#fff;border-radius:var(--radius);padding:22px 22px 20px;margin-top:16px;position:relative;overflow:hidden}
+.hero{background:var(--ink);color:#fff;border-radius:var(--radius);padding:22px 22px 20px;margin-top:16px;position:relative;overflow:hidden;border-top:3px solid var(--teal)}
 .hero h1{margin:0 0 6px;font-size:26px;line-height:1.15}
-.hero h1 em{font-style:normal;color:#4ADE9E}
+.hero h1 em{font-style:normal;color:#2DD4BF}
 .hero p{color:#C9CDD6;font-size:14.5px;max-width:560px}
 .hero .cta-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;font-weight:700;font-size:14.5px;padding:11px 18px;transition:transform .06s ease, box-shadow .15s ease}
@@ -88,7 +91,7 @@ h2{font-size:18px;letter-spacing:-.01em;margin:26px 0 10px}
 .why-card .ic{font-size:20px;margin-bottom:6px}
 .why-card h3{font-size:15px;margin-bottom:4px}
 .why-card p{font-size:13px;color:var(--muted)}
-.why-card p b{color:var(--green)}
+.why-card p b{color:var(--teal)}
 /* league chips */
 .chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
@@ -210,6 +213,29 @@ h2{font-size:18px;letter-spacing:-.01em;margin:26px 0 10px}
 .receipt{margin-top:10px;background:#fff;border:1px dashed #BFE6D2;border-radius:9px;padding:9px 12px;font-size:12.5px;color:#0B5C40}
 .receipt .hash{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;word-break:break-all;color:var(--muted)}
 .receipt b{color:var(--green-dark)}
+/* suspended, changed, failed states */
+.susp-tag{color:var(--susp);background:var(--gold-soft);border:1px solid #F0DCAE;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:3px 9px}
+.susp-banner{background:var(--gold-soft);border:1px solid #F0DCAE;border-radius:12px;padding:13px 15px;font-size:14px;margin-top:16px;color:#6B4E12}
+.susp-banner b{color:var(--susp)}
+.odd.locked{opacity:.55;cursor:not-allowed;background:#F3F0E9}
+.odd.locked b{color:var(--muted)}
+.mk-odd.locked{opacity:.55;cursor:not-allowed;background:#F3F0E9}
+.mk-odd.locked b{color:var(--muted)}
+.changed-banner{background:#EAF1FE;border:1px solid #C7DBFC;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:10px;color:#1E3A5F}
+.changed-banner .old{color:var(--muted);text-decoration:line-through}
+.changed-banner .new{color:var(--green-dark);font-weight:800}
+.changed-actions{display:flex;gap:8px;margin-top:9px}
+.fail-banner{background:var(--red-soft);border:1px solid #F3C2C2;border-radius:10px;padding:11px 13px;font-size:13.5px;margin-bottom:10px;color:#7A1F1F}
+.fail-actions{display:flex;gap:8px;margin-top:9px}
+.btn-mini{display:inline-flex;align-items:center;gap:6px;border-radius:8px;font-weight:700;font-size:13px;padding:8px 13px;background:var(--ink);color:#fff}
+.btn-mini.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.st-failed{background:var(--red-soft);color:var(--red)}
+.standings{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-top:14px;overflow:hidden}
+.standings th,.standings td{padding:9px 12px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line)}
+.standings th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.standings tr:last-child td{border-bottom:none}
+.standings .form-row{justify-content:flex-start;margin-top:0}
+.standings .form-dot{width:18px;height:18px;font-size:10px;border-radius:5px}
 /* toast */
 #toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,80px);background:var(--ink);color:#fff;padding:13px 20px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 8px 30px rgba(0,0,0,.25);opacity:0;transition:all .3s ease;z-index:100;max-width:92vw;text-align:center;pointer-events:none}
 #toast.show{transform:translate(-50%,0);opacity:1}
@@ -234,7 +260,7 @@ footer b{color:var(--ink)}
   <div class="header-in">
     <a class="logo" href="#/home" onclick="go('home');return false;">
       <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10.5V20h13v-9.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5.5h4V20" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 3.5v17M19 3.5v17" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M5 12c2.5-3 4.5 3 7 0s4.5 3 7 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
       </span>
       <span>House<b>bets</b></span>
     </a>
@@ -252,17 +278,18 @@ footer b{color:var(--ink)}
     </div>
   </div>
   <nav id="mainNav">
-    <button class="nav-btn" data-route="home" onclick="go('home')">Home</button>
-    <button class="nav-btn" data-route="search" onclick="go('search')">Search</button>
-    <button class="nav-btn" data-route="leagues" onclick="go('leagues')">Leagues</button>
-    <button class="nav-btn" data-route="slip" onclick="go('slip')">Bet slip <span class="pill" id="slipCount" style="display:none">0</span></button>
+    <button class="nav-btn" data-route="home" onclick="go('home')">Sports home</button>
+    <button class="nav-btn" data-route="live" onclick="go('live')">Live</button>
+    <button class="nav-btn" data-route="football" onclick="go('football')">Football</button>
+    <button class="nav-btn" data-route="match" onclick="go('match')">Match page</button>
+    <button class="nav-btn" data-route="slip" onclick="go('slip')">Bet slip + My bets <span class="pill" id="slipCount" style="display:none">0</span></button>
   </nav>
 </header>
 
 <div class="wrap">
   <main id="view-home" class="view"></main>
-  <main id="view-search" class="view"></main>
-  <main id="view-leagues" class="view"></main>
+  <main id="view-live" class="view"></main>
+  <main id="view-football" class="view"></main>
   <main id="view-league" class="view"></main>
   <main id="view-match" class="view"></main>
   <main id="view-slip" class="view"></main>
@@ -325,7 +352,8 @@ let fixtures = [
   {id:'f12', league:'ligue1', home:'Marseille', away:'Monaco', hs:null, as:null, min:null, status:'upcoming', day:'Tomorrow', time:'21:00', odds:{h:2.20,d:3.50,a:3.20}, ou:{over:1.90,under:1.90}, btts:{y:1.75,n:2.00}},
   {id:'f13', league:'ligue1', home:'PSG', away:'Lyon', hs:null, as:null, min:null, status:'upcoming', day:'Today', time:'20:45', odds:{h:1.35,d:5.00,a:8.50}, ou:{over:1.65,under:2.20}, btts:{y:1.90,n:1.85}},
   {id:'f14', league:'epl', home:'Liverpool', away:'Tottenham', hs:3, as:1, min:90, status:'finished', day:'Today', time:'15:00', odds:{h:1.90,d:3.80,a:4.20}, ou:{over:1.85,under:1.95}, btts:{y:1.75,n:2.00}},
-  {id:'f15', league:'seriea', home:'Napoli', away:'Inter', hs:1, as:2, min:90, status:'finished', day:'Today', time:'15:00', odds:{h:2.90,d:3.40,a:2.50}, ou:{over:1.95,under:1.85}, btts:{y:1.80,n:1.95}}
+  {id:'f15', league:'seriea', home:'Napoli', away:'Inter', hs:1, as:2, min:90, status:'finished', day:'Today', time:'15:00', odds:{h:2.90,d:3.40,a:2.50}, ou:{over:1.95,under:1.85}, btts:{y:1.80,n:1.95}},
+  {id:'f16', league:'ucl', home:'Arsenal', away:'Real Madrid', hs:1, as:1, min:54, status:'suspended', day:'Today', time:'20:00', odds:{h:2.50,d:3.30,a:2.80}, ou:{over:1.90,under:1.90}, btts:{y:1.75,n:2.00}, suspendedReason:'VAR check'}
 ];
 const fxById = id => fixtures.find(f => f.id === id);
 
@@ -340,6 +368,9 @@ let myBets = [
   {id:'b-1', fixtureId:'f15', market:'1X2', key:'h', label:'Napoli to win', odds:2.90, stake:20.00, status:'lost', payout:0, lossback:0.40, receipt:'0x9f2c…a41d', placed:'Today, 13:48'}
 ];
 let betSeq = 1;
+let failedQueue = [];   /* placements that failed, awaiting retry */
+let ticksElapsed = 0;
+let f1SuspendedOnce = false;
 let currentLeague = 'epl';
 let currentMatch = 'f1';
 let searchQuery = '';
@@ -377,12 +408,16 @@ function updateHeader(){
 }
 function statusLabel(f){
   if (f.status === 'live') return '<span class="live-dot"></span> <span class="live-tag">Live ' + f.min + '&prime;</span>';
+  if (f.status === 'suspended') return '<span class="susp-tag">Suspended</span> <span style="font-weight:600">' + esc(f.suspendedReason || 'VAR check') + '</span>';
   if (f.status === 'finished') return '<span style="font-weight:700">Full time</span>';
   return '<span>' + f.day + ' &middot; ' + f.time + '</span>';
 }
 function oddsCell(f, market, key, label, sub){
   const inSlip = slip.some(s => s.fixtureId === f.id && s.market === market && s.key === key);
   const odds = market === '1X2' ? f.odds[key] : market === 'OU' ? f.ou[key] : f.btts[key];
+  if (f.status === 'suspended'){
+    return '<button class="odd locked" disabled title="Suspended, ' + esc(f.suspendedReason || 'VAR check') + '"><small>' + label + '</small><b>' + oddsFmt(odds) + '</b></button>';
+  }
   return '<button class="odd' + (inSlip ? ' sel' : '') + '" onclick="event.stopPropagation();toggleSlip(\'' + f.id + '\',\'' + market + '\',\'' + key + '\',\'' + esc(label) + '\',' + odds + ')">' +
     '<small>' + label + '</small><b>' + oddsFmt(odds) + '</b></button>';
 }
@@ -402,17 +437,50 @@ function fixtureCard(f){
     '</div></div>';
 }
 
+/* ============ ODDS HELPERS ============ */
+function dcOdds(f){
+  return { '1X': +Math.max(1.05, 1/(1/f.odds.h + 1/f.odds.d)).toFixed(2), '12': +Math.max(1.05, 1/(1/f.odds.h + 1/f.odds.a)).toFixed(2), 'X2': +Math.max(1.05, 1/(1/f.odds.d + 1/f.odds.a)).toFixed(2) };
+}
+function dnbOdds(f){
+  return { h: +(f.odds.h * 0.92).toFixed(2), a: +(f.odds.a * 0.92).toFixed(2) };
+}
+function currentOddsFor(s){
+  const f = fxById(s.fixtureId);
+  if (!f) return s.odds;
+  if (s.market === '1X2') return f.odds[s.key];
+  if (s.market === 'OU') return f.ou[s.key];
+  if (s.market === 'BTTS') return f.btts[s.key];
+  if (s.market === 'DC') return dcOdds(f)[s.key];
+  if (s.market === 'DNB') return dnbOdds(f)[s.key];
+  return s.odds;
+}
+function acceptOdds(i){
+  if (slip[i]){ slip[i].changed = false; delete slip[i].oddsOld; renderSlip(); }
+}
+function retryFailed(i){
+  const fq = failedQueue[i];
+  if (!fq) return;
+  const f = fxById(fq.fixtureId);
+  if (!f){ failedQueue.splice(i, 1); renderSlip(); return; }
+  if (f.status === 'suspended'){ toast('Still suspended, ' + (f.suspendedReason || 'VAR check') + '. Try again shortly.'); return; }
+  if (f.status === 'finished'){ toast('That match finished. Pick a live or upcoming one.'); failedQueue.splice(i, 1); renderSlip(); return; }
+  const cur = currentOddsFor(fq);
+  slip.push({fixtureId:fq.fixtureId, market:fq.market, key:fq.key, label:fq.label, odds:cur, stake:fq.stake});
+  failedQueue.splice(i, 1);
+  updateHeader();
+  toast('<span class="g">Back on the slip.</span> ' + esc(fq.label) + ' @ ' + oddsFmt(cur));
+  renderSlip();
+}
+function dismissFailed(i){ failedQueue.splice(i, 1); renderSlip(); }
+
 /* ============ VIEWS ============ */
 function renderHome(){
-  const live = fixtures.filter(f => f.status === 'live');
-  const today = fixtures.filter(f => f.status === 'upcoming' && f.day === 'Today');
-  const tomorrow = fixtures.filter(f => f.status === 'upcoming' && f.day === 'Tomorrow');
   $('view-home').innerHTML =
     '<div class="hero">' +
       '<h1>The sportsbook where <em>losing still pays.</em></h1>' +
       '<p>Every bet is on-chain and provably fair. Every loss returns up to 2% in USDT the instant it settles. Your Daily Dividend grows with every bet you place. No banks, no waiting, no claiming.</p>' +
       '<div class="cta-row">' +
-        '<button class="btn btn-green" onclick="go(\'search\')">Find a match</button>' +
+        '<button class="btn btn-green" onclick="focusHomeSearch()">Find a match</button>' +
         '<button class="btn btn-ghost" onclick="go(\'slip\')">My bet slip' + (slip.length ? ' (' + slip.length + ')' : '') + '</button>' +
       '</div>' +
       '<div class="steps">' +
@@ -426,73 +494,73 @@ function renderHome(){
       '<div class="why-card"><div class="ic">◈</div><h3>Daily Dividend</h3><p>Every bet grows your dividend. Stake more today, <b>earn more tomorrow</b>, and climb from Bronze to Silver, Gold and Diamond.</p></div>' +
       '<div class="why-card"><div class="ic">⛓</div><h3>On-chain and provably fair</h3><p>Every bet is settled on-chain. <b>Check any receipt</b> yourself. No hidden odds, no edited results.</p></div>' +
     '</div>' +
-    '<div class="section-head"><h2>Live now</h2><span class="link" onclick="go(\'search\')" style="cursor:pointer">All fixtures &rarr;</span></div>' +
-    '<div class="fx-list">' + live.map(fixtureCard).join('') + '</div>' +
-    '<div class="section-head"><h2>Top leagues</h2></div>' +
-    '<div class="chips">' + LEAGUES.map(l =>
-      '<button class="chip" onclick="openLeague(\'' + l.id + '\')"><span class="dot" style="background:' + l.color + '"></span>' + l.name + ' <small>' + l.country + '</small></button>'
-    ).join('') + '</div>' +
-    '<div class="section-head"><h2>Upcoming today</h2></div>' +
-    '<div class="fx-list">' + today.map(fixtureCard).join('') + '</div>' +
-    '<div class="section-head"><h2>Tomorrow</h2></div>' +
-    '<div class="fx-list">' + tomorrow.slice(0,3).map(fixtureCard).join('') + '</div>';
-}
-
-function renderSearch(){
-  const q = searchQuery.trim().toLowerCase();
-  const matchQ = f => !q || f.home.toLowerCase().includes(q) || f.away.toLowerCase().includes(q) || leagueById(f.league).name.toLowerCase().includes(q);
-  const today = fixtures.filter(f => f.day === 'Today' && matchQ(f));
-  const tomorrow = fixtures.filter(f => f.day === 'Tomorrow' && matchQ(f));
-  const total = today.length + tomorrow.length;
-  $('view-search').innerHTML =
-    '<h1>Search</h1>' +
-    '<p class="sub">Odds, fixtures and live scores. Tap any fixture to open its match page.</p>' +
+    '<div class="section-head"><h2>Find a match</h2><span class="link" onclick="go(\'live\')" style="cursor:pointer">All live matches &rarr;</span></div>' +
     '<div class="search-box"><span class="mag">&#128269;</span>' +
-      '<input id="searchInput" type="text" placeholder="Search a team or league, for example Arsenal" value="' + esc(searchQuery) + '" autocomplete="off">' +
+      '<input id="homeSearchInput" type="text" placeholder="Search a team or league, for example Arsenal" value="' + esc(searchQuery) + '" autocomplete="off">' +
     '</div>' +
     '<div class="tag-row">' +
       ['Arsenal','Real Madrid','Bayern','PSG','Premier League','Champions League'].map(t =>
-        '<button class="tag" onclick="setSearch(\'' + t + '\')">' + t + '</button>').join('') +
+        '<button class="tag" onclick="setHomeSearch(\'' + t + '\')">' + t + '</button>').join('') +
     '</div>' +
-    '<p class="search-hint">' + (q ? total + ' fixture' + (total === 1 ? '' : 's') + ' found for &ldquo;' + esc(searchQuery) + '&rdquo;' : 'Showing all fixtures. Type to filter live.') + '</p>' +
-    '<div class="day-label">Today</div>' +
-    (today.length ? '<div class="fx-list">' + today.map(fixtureCard).join('') + '</div>' : '<div class="empty"><b>No fixtures today</b>Try a different team or league.</div>') +
-    '<div class="day-label">Tomorrow</div>' +
-    (tomorrow.length ? '<div class="fx-list">' + tomorrow.map(fixtureCard).join('') + '</div>' : '<div class="empty"><b>No fixtures tomorrow</b>Try a different team or league.</div>');
-  const inp = $('searchInput');
-  inp.addEventListener('input', () => { searchQuery = inp.value; const pos = inp.selectionStart; renderSearchKeepFocus(pos); });
-  inp.focus();
-  inp.setSelectionRange(inp.value.length, inp.value.length);
+    '<div id="homeSearchResults"></div>' +
+    '<div class="section-head"><h2>Top leagues</h2><span class="link" onclick="go(\'football\')" style="cursor:pointer">All football &rarr;</span></div>' +
+    '<div class="chips">' + LEAGUES.map(l =>
+      '<button class="chip" onclick="openLeague(\'' + l.id + '\')"><span class="dot" style="background:' + l.color + '"></span>' + l.name + ' <small>' + l.country + '</small></button>'
+    ).join('') + '</div>';
+  const inp = $('homeSearchInput');
+  if (inp) inp.addEventListener('input', () => { searchQuery = inp.value; renderHomeSearchResults(); });
+  renderHomeSearchResults();
 }
-function renderSearchKeepFocus(pos){
+
+function homeSearchResultsHtml(){
   const q = searchQuery.trim().toLowerCase();
   const matchQ = f => !q || f.home.toLowerCase().includes(q) || f.away.toLowerCase().includes(q) || leagueById(f.league).name.toLowerCase().includes(q);
-  const today = fixtures.filter(f => f.day === 'Today' && matchQ(f));
-  const tomorrow = fixtures.filter(f => f.day === 'Tomorrow' && matchQ(f));
-  const total = today.length + tomorrow.length;
-  const hint = document.querySelector('#view-search .search-hint');
-  if (hint) hint.innerHTML = (q ? total + ' fixture' + (total === 1 ? '' : 's') + ' found for &ldquo;' + esc(searchQuery) + '&rdquo;' : 'Showing all fixtures. Type to filter live.');
-  const lists = document.querySelectorAll('#view-search .fx-list, #view-search .empty');
-  /* rebuild only the two result blocks, keep the input focused */
-  const blocks = document.querySelectorAll('#view-search .day-label');
-  blocks.forEach(b => b.remove());
-  lists.forEach(el => el.remove());
-  const html =
-    '<div class="day-label">Today</div>' +
-    (today.length ? '<div class="fx-list">' + today.map(fixtureCard).join('') + '</div>' : '<div class="empty"><b>No fixtures today</b>Try a different team or league.</div>') +
-    '<div class="day-label">Tomorrow</div>' +
-    (tomorrow.length ? '<div class="fx-list">' + tomorrow.map(fixtureCard).join('') + '</div>' : '<div class="empty"><b>No fixtures tomorrow</b>Try a different team or league.</div>');
-  document.querySelector('#view-search .tag-row').insertAdjacentHTML('afterend', html);
-  const inp = $('searchInput');
-  inp.focus();
-  try { inp.setSelectionRange(pos, pos); } catch(e){}
+  const list = fixtures.filter(matchQ);
+  const live = list.filter(f => f.status === 'live');
+  const susp = list.filter(f => f.status === 'suspended');
+  const today = list.filter(f => f.day === 'Today' && f.status === 'upcoming');
+  const tomorrow = list.filter(f => f.day === 'Tomorrow');
+  const total = list.length;
+  let html = '<p class="search-hint">' + (q ? total + ' fixture' + (total === 1 ? '' : 's') + ' found for &ldquo;' + esc(searchQuery) + '&rdquo;' : 'Showing all fixtures. Type to filter live.') + '</p>';
+  if (live.length) html += '<div class="day-label">Live now</div><div class="fx-list">' + live.map(fixtureCard).join('') + '</div>';
+  if (susp.length) html += '<div class="day-label">Suspended</div><div class="fx-list">' + susp.map(fixtureCard).join('') + '</div>';
+  if (today.length) html += '<div class="day-label">Today</div><div class="fx-list">' + today.map(fixtureCard).join('') + '</div>';
+  if (tomorrow.length) html += '<div class="day-label">Tomorrow</div><div class="fx-list">' + tomorrow.map(fixtureCard).join('') + '</div>';
+  if (!total) html += '<div class="empty"><b>No fixtures found</b>Try a different team or league.</div>';
+  return html;
 }
-function setSearch(t){ searchQuery = t; renderSearch(); }
+function renderHomeSearchResults(){
+  const el = $('homeSearchResults');
+  if (el) el.innerHTML = homeSearchResultsHtml();
+}
+function setHomeSearch(t){
+  searchQuery = t;
+  const inp = $('homeSearchInput');
+  if (inp) inp.value = t;
+  renderHomeSearchResults();
+}
+function focusHomeSearch(){
+  const inp = $('homeSearchInput');
+  if (inp){ inp.scrollIntoView({behavior:'smooth', block:'center'}); inp.focus(); }
+}
 
-function renderLeagues(){
-  $('view-leagues').innerHTML =
-    '<h1>Leagues</h1>' +
-    '<p class="sub">Pick a league to see every fixture, live scores and dates.</p>' +
+function renderLive(){
+  const live = fixtures.filter(f => f.status === 'live');
+  const susp = fixtures.filter(f => f.status === 'suspended');
+  const fin = fixtures.filter(f => f.status === 'finished');
+  $('view-live').innerHTML =
+    '<h1>Live</h1>' +
+    '<p class="sub">Every match in play right now, with the minute, the score and odds that move as the game moves. Tap any match to open its match page.</p>' +
+    (susp.length ? '<div class="day-label">Suspended &middot; ' + susp.length + '</div><div class="fx-list">' + susp.map(fixtureCard).join('') + '</div><p class="search-hint">Suspended markets are greyed out and cannot be bet on until the check clears. The score keeps updating.</p>' : '') +
+    '<div class="day-label">Live now &middot; ' + live.length + '</div>' +
+    (live.length ? '<div class="fx-list">' + live.map(fixtureCard).join('') + '</div>' : '<div class="empty"><b>No matches live right now</b>Check back soon, or see today&rsquo;s upcoming fixtures on Sports home.</div>') +
+    (fin.length ? '<div class="day-label">Finished today</div><div class="fx-list">' + fin.map(fixtureCard).join('') + '</div>' : '');
+}
+
+function renderFootball(){
+  $('view-football').innerHTML =
+    '<h1>Football</h1>' +
+    '<p class="sub">Every football league, every fixture, live scores and dates. Pick a league to see its table and fixtures.</p>' +
     '<div class="fx-list" style="margin-top:14px">' + LEAGUES.map(l => {
       const count = fixtures.filter(f => f.league === l.id).length;
       const liveN = fixtures.filter(f => f.league === l.id && f.status === 'live').length;
@@ -508,12 +576,22 @@ function renderLeague(){
   const lg = leagueById(currentLeague);
   const list = fixtures.filter(f => f.league === lg.id);
   const live = list.filter(f => f.status === 'live');
+  const susp = list.filter(f => f.status === 'suspended');
   const up = list.filter(f => f.status === 'upcoming');
   const fin = list.filter(f => f.status === 'finished');
+  const tableTeams = [...new Set(list.flatMap(f => [f.home, f.away]))]
+    .map(name => ({name, t: TEAMS[name]}))
+    .filter(x => x.t && x.t.pos !== undefined)
+    .sort((a, b) => a.t.pos - b.t.pos);
+  const formDotsLg = arr => arr.map(r => '<span class="form-dot ' + r.toLowerCase() + '">' + r + '</span>').join('');
   $('view-league').innerHTML =
     '<div class="league-hero"><div class="badge" style="background:' + lg.color + '">' + lg.short + '</div>' +
       '<div><h1>' + lg.name + '</h1><p>' + lg.country + ' &middot; ' + list.length + ' fixtures &middot; ' + live.length + ' live now</p></div></div>' +
+    (tableTeams.length ? '<div class="day-label">League table</div><div style="overflow-x:auto"><table class="standings"><thead><tr><th>#</th><th>Team</th><th>GF</th><th>GA</th><th>Form</th></tr></thead><tbody>' +
+      tableTeams.map(x => '<tr><td><b>' + x.t.pos + '</b></td><td><b>' + x.name + '</b></td><td>' + x.t.gf + '</td><td>' + x.t.ga + '</td><td><div class="form-row">' + formDotsLg(x.t.form) + '</div></td></tr>').join('') +
+      '</tbody></table></div>' : '') +
     (live.length ? '<div class="day-label">Live now</div><div class="fx-list">' + live.map(fixtureCard).join('') + '</div>' : '') +
+    (susp.length ? '<div class="day-label">Suspended</div><div class="fx-list">' + susp.map(fixtureCard).join('') + '</div>' : '') +
     (up.length ? '<div class="day-label">Upcoming</div><div class="fx-list">' + up.map(fixtureCard).join('') + '</div>' : '') +
     (fin.length ? '<div class="day-label">Finished today</div><div class="fx-list">' + fin.map(fixtureCard).join('') + '</div>' : '');
 }
@@ -534,17 +612,21 @@ function renderMatch(){
   const mkBtn = (market, key, label, odds) => {
     const inSlip = slip.some(s => s.fixtureId === f.id && s.market === market && s.key === key);
     const pct = Math.round(100 / odds);
+    if (f.status === 'suspended'){
+      return '<button class="mk-odd locked" disabled title="Suspended, ' + esc(f.suspendedReason || 'VAR check') + '"><small>' + label + '<span class="pct">' + pct + '%</span></small><b>' + oddsFmt(odds) + '</b></button>';
+    }
     return '<button class="mk-odd' + (inSlip ? ' sel' : '') + '" onclick="toggleSlip(\'' + f.id + '\',\'' + market + '\',\'' + key + '\',\'' + esc(label) + '\',' + odds + ')">' +
       '<small>' + label + '<span class="pct">' + pct + '%</span></small><b>' + oddsFmt(odds) + '</b></button>';
   };
-  const dc = { '1X': +Math.max(1.05, 1/(1/f.odds.h + 1/f.odds.d)).toFixed(2), '12': +Math.max(1.05, 1/(1/f.odds.h + 1/f.odds.a)).toFixed(2), 'X2': +Math.max(1.05, 1/(1/f.odds.d + 1/f.odds.a)).toFixed(2) };
-  const dnb = { h: +(f.odds.h * 0.92).toFixed(2), a: +(f.odds.a * 0.92).toFixed(2) };
+  const dc = dcOdds(f);
+  const dnb = dnbOdds(f);
   $('view-match').innerHTML =
     '<div class="match-card">' +
       '<div class="match-status"><span style="color:' + lg.color + ';font-weight:700">' + lg.name + '</span> &middot; ' + statusLabel(f) + '</div>' +
+      (f.status === 'suspended' ? '<div class="susp-banner"><b>Betting suspended, ' + esc(f.suspendedReason || 'VAR check') + '.</b> Odds are frozen and cannot be bet on until the check clears. The score keeps updating.</div>' : '') +
       '<div class="match-teams">' +
         '<div class="tm"><div class="crest" style="background:' + lg.color + '">' + f.home.slice(0,2).toUpperCase() + '</div><h2>' + f.home + '</h2><p>' + ht.pos + (ht.pos===1?'st':ht.pos===2?'nd':ht.pos===3?'rd':'th') + ' in league</p><div class="form-row">' + formDots(ht.form) + '</div></div>' +
-        '<div class="match-score">' + (f.status === 'upcoming' ? f.time : f.hs + ' - ' + f.as) + '<small>' + (f.status === 'live' ? f.min + '&prime; live' : f.status === 'finished' ? 'Full time' : f.day) + '</small></div>' +
+        '<div class="match-score">' + (f.status === 'upcoming' ? f.time : f.hs + ' - ' + f.as) + '<small>' + (f.status === 'live' ? f.min + '&prime; live' : f.status === 'finished' ? 'Full time' : f.status === 'suspended' ? 'Suspended' : f.day) + '</small></div>' +
         '<div class="tm"><div class="crest" style="background:#3A3F47">' + f.away.slice(0,2).toUpperCase() + '</div><h2>' + f.away + '</h2><p>' + at.pos + (at.pos===1?'st':at.pos===2?'nd':at.pos===3?'rd':'th') + ' in league</p><div class="form-row">' + formDots(at.form) + '</div></div>' +
       '</div>' +
       '<div class="stat-grid">' +
@@ -588,12 +670,21 @@ function renderSlip(){
   const totalReturn = slip.reduce((s, x) => s + (x.stake || 0) * x.odds, 0);
   const openBets = myBets.filter(b => b.status === 'open');
   const settledBets = myBets.filter(b => b.status !== 'open');
+  const hasChanged = slip.some(s => s.changed);
+  const failedHtml = failedQueue.length ? failedQueue.map((fq, i) =>
+    '<div class="fail-banner"><b>Bet failed.</b> ' + esc(fq.label) + ' could not be placed. ' + esc(fq.reason) + '.' +
+    '<div class="fail-actions"><button class="btn-mini" onclick="retryFailed(' + i + ')">Retry bet</button><button class="btn-mini ghost" onclick="dismissFailed(' + i + ')">Dismiss</button></div></div>'
+  ).join('') : '';
   const slipHtml = slip.length ? slip.map((s, i) => {
     const f = fxById(s.fixtureId);
+    const changedHtml = s.changed ?
+      '<div class="changed-banner"><b>Odds changed.</b> <span class="old">' + oddsFmt(s.oddsOld) + '</span> &rarr; <span class="new">' + oddsFmt(s.odds) + '</span>' +
+      '<div class="changed-actions"><button class="btn-mini" onclick="acceptOdds(' + i + ')">Accept new odds</button><button class="btn-mini ghost" onclick="removeSlip(' + i + ')">Remove</button></div></div>' : '';
     return '<div class="slip-item">' +
       '<button class="rm" onclick="removeSlip(' + i + ')" aria-label="Remove">&times;</button>' +
       '<div class="sel">' + esc(s.label) + ' <span style="color:var(--green)">@ ' + oddsFmt(s.odds) + '</span></div>' +
       '<div class="fx-name">' + f.home + ' vs ' + f.away + ' &middot; ' + leagueById(f.league).name + ' &middot; Single</div>' +
+      changedHtml +
       '<div class="row"><div class="stake-in"><span>Stake</span><input type="number" min="1" max="1000" step="1" value="' + (s.stake || 10) + '" oninput="setStake(' + i + ', this.value)"><span class="cur">USDT</span></div>' +
       '<span class="ret">To win <b>' + fmt((s.stake || 10) * s.odds) + '</b></span></div>' +
     '</div>';
@@ -619,11 +710,13 @@ function renderSlip(){
     '<p class="sub">Singles only. No multis, no boosts, no free bets.</p>' +
     '<div class="slip-layout">' +
       '<div class="panel"><h2>Bet slip</h2><p class="sub">' + slip.length + ' selection' + (slip.length === 1 ? '' : 's') + ' &middot; each bet is a single</p>' +
+        failedHtml +
         slipHtml +
         (slip.length ? '<div class="slip-total"><span>Total stake</span><b>' + fmt(totalStake) + ' USDT</b></div>' +
         '<div class="slip-total"><span>Potential return</span><b>' + fmt(totalReturn) + ' USDT</b></div>' +
-        '<button class="btn btn-green btn-block" style="margin-top:14px" onclick="placeBets()" ' + (totalStake > balance ? 'disabled' : '') + '>Place ' + slip.length + ' bet' + (slip.length === 1 ? '' : 's') + ' &middot; ' + fmt(totalStake) + ' USDT</button>' +
+        '<button class="btn btn-green btn-block" style="margin-top:14px" onclick="placeBets()" ' + (totalStake > balance || hasChanged ? 'disabled' : '') + '>Place ' + slip.length + ' bet' + (slip.length === 1 ? '' : 's') + ' &middot; ' + fmt(totalStake) + ' USDT</button>' +
         (totalStake > balance ? '<p style="color:var(--red);font-size:13px;margin-top:8px">Total stake is above your sample balance.</p>' : '') +
+        (hasChanged ? '<p style="color:#8A6D1B;font-size:13px;margin-top:8px">Odds changed on one of your selections. Accept the new odds, or remove it, to place your bets.</p>' : '') +
         '<div class="lossback-note"><b>Losing still pays.</b> If any of these bets loses, up to 2% of the stake comes back in USDT the instant it settles, with an on-chain receipt.</div>' : '') +
       '</div>' +
       '<div class="panel"><h2>My bets</h2><p class="sub">' + openBets.length + ' open &middot; ' + settledBets.length + ' settled</p>' +
@@ -640,12 +733,12 @@ function go(route){
   if (route === 'match') h += '/' + currentMatch;
   try { history.replaceState(null, '', h); } catch(e){}
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.route === route || (route === 'league' && b.dataset.route === 'leagues') || (route === 'match' && b.dataset.route === 'search')));
-  const map = {home:'view-home', search:'view-search', leagues:'view-leagues', league:'view-league', match:'view-match', slip:'view-slip'};
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.route === route || (route === 'league' && b.dataset.route === 'football')));
+  const map = {home:'view-home', live:'view-live', football:'view-football', league:'view-league', match:'view-match', slip:'view-slip'};
   $(map[route]).classList.add('active');
   if (route === 'home') renderHome();
-  if (route === 'search') renderSearch();
-  if (route === 'leagues') renderLeagues();
+  if (route === 'live') renderLive();
+  if (route === 'football') renderFootball();
   if (route === 'league') renderLeague();
   if (route === 'match') renderMatch();
   if (route === 'slip') renderSlip();
@@ -672,7 +765,8 @@ function toggleSlip(fixtureId, market, key, label, odds){
   const active = document.querySelector('.view.active');
   if (active && active.id === 'view-match') renderMatch();
   else if (active && active.id === 'view-home') renderHome();
-  else if (active && active.id === 'view-search') renderSearch();
+  else if (active && active.id === 'view-live') renderLive();
+  else if (active && active.id === 'view-football') renderFootball();
   else if (active && active.id === 'view-league') renderLeague();
 }
 function removeSlip(i){ slip.splice(i, 1); updateHeader(); renderSlip(); }
@@ -690,21 +784,49 @@ function setStake(i, v){
   }
 }
 function placeBets(){
-  const total = slip.reduce((s, x) => s + (x.stake || 0), 0);
-  if (!slip.length || total <= 0) return;
-  if (total > balance){ toast('Not enough sample balance for that stake.'); return; }
-  balance -= total;
-  stakedToday += total;
-  dividendToday += total * 0.01;
-  const now = new Date();
-  const stamp = 'Today, ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+  if (!slip.length) return;
+  const allStake = slip.reduce((s, x) => s + (x.stake || 0), 0);
+  if (allStake <= 0) return;
+  /* suspended or finished selections fail first, whatever their odds did */
+  const ok = [], failed = [];
   slip.forEach(s => {
-    myBets.unshift({id:'b' + (betSeq++), fixtureId:s.fixtureId, market:s.market, key:s.key, label:s.label, odds:s.odds, stake:s.stake, status:'open', payout:0, placed:stamp});
+    const f = fxById(s.fixtureId);
+    if (!f) return;
+    if (f.status === 'suspended') failed.push({sel: s, reason: 'Market suspended, ' + (f.suspendedReason || 'VAR check')});
+    else if (f.status === 'finished') failed.push({sel: s, reason: 'Match finished'});
+    else ok.push(s);
   });
-  const n = slip.length;
+  /* the odds-changed gate applies only to selections that can still be placed */
+  if (ok.some(s => s.changed)){
+    if (failed.length){
+      failed.forEach(({sel, reason}) => failedQueue.unshift({fixtureId:sel.fixtureId, market:sel.market, key:sel.key, label:sel.label, odds:sel.odds, stake:sel.stake, reason}));
+      slip = ok;
+      updateHeader();
+      renderSlip();
+    }
+    toast('Odds changed on one of your selections. Accept the new odds, or remove it, before placing.');
+    return;
+  }
+  const totalOk = ok.reduce((s, x) => s + (x.stake || 0), 0);
+  if (totalOk > balance){ toast('Not enough sample balance for that stake.'); return; }
+  if (ok.length){
+    balance -= totalOk;
+    stakedToday += totalOk;
+    dividendToday += totalOk * 0.01;
+    const now = new Date();
+    const stamp = 'Today, ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+    ok.forEach(s => {
+      myBets.unshift({id:'b' + (betSeq++), fixtureId:s.fixtureId, market:s.market, key:s.key, label:s.label, odds:s.odds, stake:s.stake, status:'open', payout:0, placed:stamp});
+    });
+  }
+  if (failed.length){
+    failed.forEach(({sel, reason}) => failedQueue.unshift({fixtureId:sel.fixtureId, market:sel.market, key:sel.key, label:sel.label, odds:sel.odds, stake:sel.stake, reason}));
+  }
   slip = [];
   updateHeader();
-  toast('<span class="g">Bet placed.</span> ' + n + ' single' + (n === 1 ? '' : 's') + ' on. Paid the second you win, loss-back the second you lose.');
+  if (ok.length && failed.length) toast('<span class="g">' + ok.length + ' bet' + (ok.length === 1 ? '' : 's') + ' placed.</span> ' + failed.length + ' failed, ' + failed[0].reason + '. Retry it from the slip.');
+  else if (ok.length) toast('<span class="g">Bet placed.</span> ' + ok.length + ' single' + (ok.length === 1 ? '' : 's') + ' on. Paid the second you win, loss-back the second you lose.');
+  else if (failed.length) toast('<span style="color:#FF9A9A">Bet failed.</span> ' + failed[0].reason + '. Retry it from the slip when the market reopens.');
   go('slip');
 }
 
@@ -753,10 +875,33 @@ function settleFixture(f){
 
 /* ============ LIVE SIMULATION ============ */
 function tick(){
-  let changed = false;
+  ticksElapsed++;
+  let uiChanged = false;
+  /* Arsenal vs Chelsea suspends once, about 15 seconds after load, for a VAR check, then resumes */
+  const f1 = fxById('f1');
+  if (!f1SuspendedOnce && ticksElapsed >= 3 && f1 && f1.status === 'live'){
+    f1SuspendedOnce = true;
+    f1.status = 'suspended';
+    f1.suspendedReason = 'VAR check';
+    f1.resumeIn = 4;
+    uiChanged = true;
+    toast('Betting suspended on Arsenal vs Chelsea, VAR check. Odds will return shortly.');
+  }
   fixtures.forEach(f => {
+    if (f.status === 'suspended'){
+      if (f.resumeIn !== undefined){
+        f.resumeIn--;
+        if (f.resumeIn <= 0){
+          f.status = 'live';
+          delete f.resumeIn;
+          uiChanged = true;
+          toast('Betting is back on ' + f.home + ' vs ' + f.away + '.');
+        }
+      }
+      return;
+    }
     if (f.status !== 'live') return;
-    changed = true;
+    uiChanged = true;
     f.min = Math.min(90, (f.min || 0) + 1);
     /* a goal roughly every 25 ticks, weighted to the favourite */
     if (Math.random() < 0.045){
@@ -773,13 +918,29 @@ function tick(){
       toast('Full time: ' + f.home + ' ' + f.hs + ' - ' + f.as + ' ' + f.away + '. Open bets on it have settled.');
     }
   });
-  if (!changed) return;
+  /* odds-changed detection for selections already on the slip */
+  slip.forEach(s => {
+    const f = fxById(s.fixtureId);
+    if (!f || f.status !== 'live') return;
+    const cur = currentOddsFor(s);
+    if (cur !== s.odds){
+      if (!s.changed){ s.oddsOld = s.odds; s.changed = true; }
+      s.odds = cur;
+      uiChanged = true;
+    }
+  });
+  if (!uiChanged) return;
   const active = document.querySelector('.view.active');
   if (!active) return;
-  if (active.id === 'view-home') renderHome();
+  if (active.id === 'view-home'){
+    /* do not rebuild while the user is typing in the search box */
+    if (document.activeElement && document.activeElement.id === 'homeSearchInput') return;
+    renderHome();
+  }
+  else if (active.id === 'view-live') renderLive();
+  else if (active.id === 'view-football') renderFootball();
   else if (active.id === 'view-league') renderLeague();
   else if (active.id === 'view-match') renderMatch();
-  else if (active.id === 'view-search') { /* keep search input untouched, refresh lists only */ }
   else if (active.id === 'view-slip') renderSlip();
 }
 setInterval(tick, 5000);
@@ -788,7 +949,7 @@ setInterval(tick, 5000);
 updateHeader();
 (function(){
   const m = (location.hash || '').match(/^#\/(\w+)(?:\/([\w-]+))?/);
-  if (m && ['home','search','leagues','league','match','slip'].includes(m[1])){
+  if (m && ['home','live','football','league','match','slip'].includes(m[1])){
     if (m[1] === 'league' && leagueById(m[2])) currentLeague = m[2];
     if (m[1] === 'match' && fxById(m[2])) currentMatch = m[2];
     go(m[1]);

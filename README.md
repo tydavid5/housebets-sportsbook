@@ -10,11 +10,19 @@ A clickable sportsbook prototype for the Housebets Contest Labs Design contest (
 
 ## The five pages
 
-1. **Sports home**: search, top leagues, live fixtures with ticking scores and odds, upcoming today and tomorrow.
-2. **Search**: live filtering over teams and leagues, fixtures for today and tomorrow, tap any fixture to open its match page.
-3. **League**: every fixture in that league, live scores and dates, tap any fixture to open its match page.
-4. **Match**: team form and stats, live odds and all markets (match result, total goals, both teams to score, double chance, draw no bet). Tap odds to add a single to your slip.
+1. **Sports home**: search built in, top leagues, live fixtures with ticking scores and odds, upcoming today and tomorrow.
+2. **Live**: every match in play right now, with the minute, the score and odds that move as the game moves, plus any suspended matches.
+3. **Football**: every football league, each with its league table and fixtures, live scores and dates.
+4. **Match page**: team form and stats, live odds and all markets (match result, total goals, both teams to score, double chance, draw no bet). Tap odds to add a single to your slip.
 5. **Bet slip and My bets**: singles only. Enter a stake, see the potential return, place the bet. Placed bets show as open, then settle as won, lost or void.
+
+## Every state: suspended, changed, failed
+
+A sportsbook that only shows the happy path is not one you would ship tomorrow.
+
+- **Suspended**: Arsenal vs Real Madrid sits suspended on the Live page from the first load (VAR check), with greyed-out odds and a banner on its match page. Arsenal vs Chelsea also suspends live about 15 seconds after the page loads, then resumes, so the state appears during normal play.
+- **Changed**: add a live selection to the slip and wait a few seconds. When the odds drift, the slip shows an "Odds changed" notice with the old and new odds, and Accept new odds or Remove. The bet cannot be placed until the change is accepted or the bet is removed.
+- **Failed**: place a bet while its market is suspended and it fails with a clear error and a Retry button. The failed bet never becomes an open bet, and retrying works once the market reopens.
 
 ## The god-tier ability: Loss-back, live
 

@@ -537,7 +537,7 @@ function renderMatch(){
     return '<button class="mk-odd' + (inSlip ? ' sel' : '') + '" onclick="toggleSlip(\'' + f.id + '\',\'' + market + '\',\'' + key + '\',\'' + esc(label) + '\',' + odds + ')">' +
       '<small>' + label + '<span class="pct">' + pct + '%</span></small><b>' + oddsFmt(odds) + '</b></button>';
   };
-  const dc = { '1X': +(1/(1/f.odds.h + 1/f.odds.d - 1)).toFixed(2) || 1.30, '12': +(1/(1/f.odds.h + 1/f.odds.a - 1)).toFixed(2) || 1.25, 'X2': +(1/(1/f.odds.d + 1/f.odds.a - 1)).toFixed(2) || 1.35 };
+  const dc = { '1X': +Math.max(1.05, 1/(1/f.odds.h + 1/f.odds.d)).toFixed(2), '12': +Math.max(1.05, 1/(1/f.odds.h + 1/f.odds.a)).toFixed(2), 'X2': +Math.max(1.05, 1/(1/f.odds.d + 1/f.odds.a)).toFixed(2) };
   const dnb = { h: +(f.odds.h * 0.92).toFixed(2), a: +(f.odds.a * 0.92).toFixed(2) };
   $('view-match').innerHTML =
     '<div class="match-card">' +

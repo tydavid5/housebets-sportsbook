@@ -317,8 +317,8 @@ const TEAMS = {
   'Chelsea':      {form:['W','D','L','W','D'], gf:8,  ga:6,  pos:4},
   'Man City':     {form:['W','W','W','D','W'], gf:13, ga:4,  pos:2},
   'Liverpool':    {form:['D','W','W','L','W'], gf:10, ga:6,  pos:3},
-  'Tottenham':    {form:['L','W','D','W','L'], gf:7,  ga:8,  pos:7},
-  'Newcastle':    {form:['W','L','W','D','W'], gf:9,  ga:7,  pos:6},
+  'Tottenham':    {form:['L','W','D','W','L'], gf:7,  ga:8,  pos:6},
+  'Newcastle':    {form:['W','L','W','D','W'], gf:9,  ga:7,  pos:5},
   'Real Madrid':  {form:['W','W','W','W','D'], gf:12, ga:3,  pos:1},
   'Barcelona':    {form:['W','D','W','W','W'], gf:14, ga:5,  pos:2},
   'Atletico Madrid':{form:['D','W','L','W','D'],gf:6,  ga:5,  pos:3},
@@ -520,12 +520,14 @@ function homeSearchResultsHtml(){
   const susp = list.filter(f => f.status === 'suspended');
   const today = list.filter(f => f.day === 'Today' && f.status === 'upcoming');
   const tomorrow = list.filter(f => f.day === 'Tomorrow');
+  const fin = list.filter(f => f.status === 'finished');
   const total = list.length;
   let html = '<p class="search-hint">' + (q ? total + ' fixture' + (total === 1 ? '' : 's') + ' found for &ldquo;' + esc(searchQuery) + '&rdquo;' : 'Showing all fixtures. Type to filter live.') + '</p>';
   if (live.length) html += '<div class="day-label">Live now</div><div class="fx-list">' + live.map(fixtureCard).join('') + '</div>';
   if (susp.length) html += '<div class="day-label">Suspended</div><div class="fx-list">' + susp.map(fixtureCard).join('') + '</div>';
   if (today.length) html += '<div class="day-label">Today</div><div class="fx-list">' + today.map(fixtureCard).join('') + '</div>';
   if (tomorrow.length) html += '<div class="day-label">Tomorrow</div><div class="fx-list">' + tomorrow.map(fixtureCard).join('') + '</div>';
+  if (fin.length) html += '<div class="day-label">Finished</div><div class="fx-list">' + fin.map(fixtureCard).join('') + '</div>';
   if (!total) html += '<div class="empty"><b>No fixtures found</b>Try a different team or league.</div>';
   return html;
 }

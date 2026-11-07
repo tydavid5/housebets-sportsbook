@@ -1,0 +1,1 @@
+Built with plain HTML, CSS and JavaScript in a single file. No frameworks, no build step, no external data. All fixtures, odds, scores and balances are samples made for this prototype. Screenshots and layout checked in a desktop browser. No AI video or image generation was used.
